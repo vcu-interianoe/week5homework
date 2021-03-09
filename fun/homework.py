@@ -6,10 +6,9 @@ def find_greatest_number(incoming_list):
     Required parameter, incoming_list, should be a list.
     Find the largest number in the list.
     """
-    if incoming_list is None:
-        return 0
-    largest_value = max(incoming_list)
-    return largest_value
+
+    largest_num = max(incoming_list)
+    return largest_num
 
 
 
@@ -19,10 +18,8 @@ def find_least_number(incoming_list):
     Find the smallest/least number in the list.
     """
 
-    if incoming_list is None:
-        return 0
-    smallest_value = min(incoming_list)
-    return smallest_value
+    smallest_num = min(incoming_list)
+    return smallest_num
     
 
 
@@ -43,10 +40,9 @@ def longest_value_key(incoming_dict):
     Required parameter, incoming_dict, should be a dict.
     Find the KEY that has a value with the highest length, use the len() function
     """
-    if incoming_dict is not None:
-        if len(incoming_dict) == 0:
-            return None
-        dict_key = max(incoming_dict, key=lambda k: len(incoming_dict[k]))
-        return dict_key
-    return None
+    try:
+        return max(incoming_dict, key=lambda x: len(incoming_dict[x]))
+    except:
+        incoming_dict = None
+        return None
     
